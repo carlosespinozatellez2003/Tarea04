@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiStyle - Catálogo de Lentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Encabezado-->
+    <header class="header">
+        <div class="logo">&#x1F453 OptiStyle</div>
+        <nav class="nav">
+            <a href="#">Inicio</a>
+            <a href="index.html">Catalogo</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+            <button type="button" onclick="mostrarCarrito()">
+                🛒 Carrito (<span id="contadorCarrito">0</span>)
+            </button>
+        </nav>    
+    </header>
+
+    <section id="carrito" hidden>
+        <button type="button" class="cerrar-carrito" onclick="cerrarCarrito()" aria-label="Cerrar carrito">
+        ✕
+        </button>
+
+        <h2>🛒 Mi carrito</h2>
+
+        <p id="carritoVacio">Tu carrito está vacío.</p>
+
+        <div id="carritoProductos" hidden>
+            <ul id="listaCarrito"></ul>
+            <p>
+                Productos: <span id="cantidadCarrito">0</span>
+            </p>
+            <p>
+                <strong>
+                    Total: S/ <span id="totalCarrito">0.00</span>
+                </strong>
+            </p>
+            <button type="button" class="boton-carrito" onclick="comprarCarrito()">
+                Comprar
+            </button>
+            <button type="button" class="boton-carrito" onclick="vaciarCarrito()">
+                Vaciar carrito
+            </button>
+        </div>
+    </section>
+
+
+    <section class="hero">
+        <h1>Encuentra tu estilo único</h1>
+        <p>Explora nuestra amplia gama de lentes de alta caldad.</p>  
+    </section>
+
+    <main class="catalog-container" id="catalogo">
+        <h2>Catálogo de Gafas de Sol</h2>
+        <div class="catalog-grid">
+            <div class="catalog-item">
+                <img src="lentes1.jpg" alt="Lente 1">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol hexagonales con lentes planas</p>
+                <a href="producto1.html" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol hexagonales con lentes planas', 730.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes2.jpg" alt="Lente 2">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol redondas con lentes polarizadas</p>
+                <a href="producto2.html" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol redondas con lentes polarizadas', 400.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes3.jpg" alt="Lente 3">
+                <h3>WearMe Pro</h3>
+                <p>Gafas de sol polarizadas redondas para mujer, protecciónUV</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol polarizadas redondas para mujer, protecciónUV', 490.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes4.jpg" alt="Lente 4">
+                <h3>WearMe Pro</h3>
+                <p>Gafas de sol para mujer, montura ojo de gato,lentes</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol para mujer, montura ojo de gato,lentes', 490.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes5.jpg" alt="Lente 5">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol cuadradas con lentes polarizadas</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol cuadradas con lentes polarizadas', 990.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes6.jpg" alt="Lente 6">
+                <h3>WearMe Pro</h3>
+                <p>Gafas de sol redondas para mujer, protección UV400</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol redondas para mujer, protección UV400', 490.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes7.jpg" alt="Lente 7">
+                <h3>WearMe Pro</h3>
+                <p>Gafas de sol polarizados, estilo aviador moderno, con puente, cuadrados, para hombre</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol polarizados, estilo aviador moderno, con puente, cuadrados, para hombre', 480.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes8.jpg" alt="Lente 8">
+                <h3>WearMe Pro</h3>
+                <p>Gafas de sol octogonales con lente plana</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol octogonales con lente plana', 590.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes9.jpg" alt="Lente 9">
+                <h3>Pro Acme</h3>
+                <p>Gafas de sol cuadradas hexagonales para mujer y hombres, lentes de cristal</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol cuadradas hexagonales para mujer y hombres, lentes de cristal', 160.99)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes10.jpg" alt="Lente 10">
+                <h3>Ray-Ban</h3>
+                <p>Hexagonal Flat Lens Geometric Sunglasses</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Hexagonal Flat Lens Geometric Sunglasses', 220.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes11.jpg" alt="Lente 11">
+                <h3>Fuse Lenses</h3>
+                <p>Lentes de respuesto para Gafas de Sol RV400</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Lentes de respuesto para Gafas de Sol RV400', 450.99)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes12.jpg" alt="Lente 12">
+                <h3>SOJOS</h3>
+                <p>Gafas de sol rectangulares hexagonales polarizadas retro para mujer y hombre</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol rectangulares hexagonales polarizadas retro para mujer y hombre', 250.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes13.jpg" alt="Lente 13">
+                <h3>SOJOS</h3>
+                <p>Gafas de sol polarizadas cuadradas para mujeres y hombres, pequeñas pantallas hexagonales de polígono</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol polarizadas cuadradas para mujeres y hombres, pequeñas pantallas hexagonales de polígono', 360.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes14.jpg" alt="Lente 14">
+                <h3>Pro Acme</h3>
+                <p>Gafas de sol polarizadas rectangulares retro para mujer y hombre</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol polarizadas rectangulares retro para mujer y hombre', 350.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes15.jpg" alt="Lente 15">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol para hombre, montura negra, lentes verdes</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol para hombre, montura negra, lentes verdes', 250.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="catalog-item">
+                <img src="lentes16.jpg" alt="Lente 16">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol redondas para hombre</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol redondas para hombre', 360.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+                <div class="catalog-item">
+                <img src="lentes17.jpg" alt="Lente 17">
+                <h3>KALIYADI</h3>
+                <p>Gafas de sol polarizados redondos para hombres y mujeres, estilo retro, de metal</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol polarizados redondos para hombres y mujeres, estilo retro, de metal', 480.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+                <div class="catalog-item">
+                <img src="lentes18.jpg" alt="Lente 18">
+                <h3>OAKLEY</h3>
+                <p>Gafas de sol cuadradas polarizadas para hombre</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol cuadradas polarizadas para hombre', 411.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+                <div class="catalog-item">
+                <img src="lentes19.jpg" alt="Lente 19">
+                <h3>Ray-Ban</h3>
+                <p>Gafas de sol redondos, de metal para mujer</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol redondos, de metal para mujer', 349.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+                <div class="catalog-item">
+                <img src="lentes20.jpg" alt="Lente 20">
+                <h3>MERRY'S</h3>
+                <p>Gafas de sol deportivas polarizadas rectangulares para hombres y mujeres, ciclismo, conducción, y pesca</p>
+                <a href="#" class="btn-precio">Más información</a>
+                <button type="button" class="boton-carrito" onclick="agregarAlCarrito('Gafas de sol deportivas polarizadas rectangulares para hombres y mujeres, ciclismo, conducción, y pesca', 560.00)">
+                    Añadir al carrito
+                </button>
+            </div>
+        </div>
+    </main>
+        
+    <script src="javascript.js"></script>
+
+</body>
+</html>

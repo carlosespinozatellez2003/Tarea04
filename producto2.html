@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray-Ban Redondas</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">&#x1F453; OptiStyle</div>
+
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="index.html">Catálogo</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+
+            <button type="button" onclick="mostrarCarrito()">
+                🛒 Carrito (<span id="contadorCarrito">0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <!-- Ventana del carrito -->
+    <section id="carrito" hidden>
+        <button type="button" class="cerrar-carrito"
+                onclick="cerrarCarrito()" aria-label="Cerrar carrito">
+            ✕
+        </button>
+
+        <h2>🛒 Mi carrito</h2>
+
+        <p id="carritoVacio">Tu carrito está vacío.</p>
+
+        <div id="carritoProductos" hidden>
+            <ul id="listaCarrito"></ul>
+
+            <p>
+                Productos: <span id="cantidadCarrito">0</span>
+            </p>
+
+            <p>
+                <strong>
+                    Total: S/ <span id="totalCarrito">0.00</span>
+                </strong>
+            </p>
+
+            <button type="button" class="boton-carrito"
+                    onclick="comprarCarrito()">
+                Comprar
+            </button>
+
+            <button type="button" class="boton-carrito"
+                    onclick="vaciarCarrito()">
+                Vaciar carrito
+            </button>
+        </div>
+    </section>
+
+    <!-- Producto en dos columnas -->
+    <main class="producto">
+
+        <!-- Galería -->
+        <section class="imagen-producto">
+            <div class="galeria-pure-css">
+                <input type="radio" name="galeria" id="img-1" checked>
+                <input type="radio" name="galeria" id="img-2">
+                <input type="radio" name="galeria" id="img-3">
+                <input type="radio" name="galeria" id="img-4">
+                <input type="radio" name="galeria" id="img-5">
+
+                <div class="miniaturas-laterales">
+                    <label for="img-1" class="thumb thumb-1">
+                        <img src="lentes2.jpg" alt="Vista principal">
+                    </label>
+
+                    <label for="img-2" class="thumb thumb-2">
+                        <img src="lentes2derecha.jpg" alt="Vista derecha">
+                    </label>
+
+                    <label for="img-3" class="thumb thumb-3">
+                        <img src="lentes2diagonal.jpg" alt="Vista diagonal">
+                    </label>
+
+                    <label for="img-4" class="thumb thumb-4">
+                        <img src="lentes2frontal.jpg" alt="Vista frontal">
+                    </label>
+
+                    <label for="img-5" class="thumb thumb-5">
+                        <img src="lentes2isquierda.jpg" alt="Vista izquierda">
+                    </label>
+                </div>
+
+                <div class="contenedor-galeria-imagen">
+                    <div class="contenedor-imagenes">
+                        <div class="zona z-1"></div>
+                        <div class="zona z-2"></div>
+                        <div class="zona z-3"></div>
+                        <div class="zona z-4"></div>
+                        <div class="zona z-5"></div>
+                        <div class="zona z-6"></div>
+                        <div class="zona z-7"></div>
+                        <div class="zona z-8"></div>
+                        <div class="zona z-9"></div>
+
+                        <img src="lentes2.jpg" class="foto foto-1"
+                             alt="Ray-Ban redondas, vista principal">
+
+                        <img src="lentes2derecha.jpg" class="foto foto-2"
+                             alt="Ray-Ban redondas, vista derecha">
+
+                        <img src="lentes2diagonal.jpg" class="foto foto-3"
+                             alt="Ray-Ban redondas, vista diagonal">
+
+                        <img src="lentes2frontal.jpg" class="foto foto-4"
+                             alt="Ray-Ban redondas, vista frontal">
+
+                        <img src="lentes2isquierda.jpg" class="foto foto-5"
+                             alt="Ray-Ban redondas, vista izquierda">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información -->
+        <section class="informacion">
+            <h1>RAY-BAN</h1>
+            <p class="modelo">Redondos - RB3565</p>
+            <p class="codigo">Código: 8053672611649</p>
+
+            <p>&#10004; Satisfacción garantizada</p>
+            <p>&#10004; Garantía óptica y garantía estética</p>
+            <p>&#10004; Retira en 24 horas en tienda</p>
+
+            <hr>
+
+            <p class="precio-titulo">PRECIO:</p>
+            <p class="precio">S/ 400.00</p>
+
+            <button type="button" class="boton-carrito"
+                    onclick="agregarAlCarrito('Gafas de sol redondas con lentes polarizadas', 400)">
+                AÑADIR AL CARRITO
+            </button>
+
+            <button type="button" class="boton-comprar"
+                    onclick="agregarAlCarrito('Gafas de sol redondas con lentes polarizadas', 400);
+                             document.getElementById('carrito').hidden = false;">
+                COMPRAR LENTES
+            </button>
+        </section>
+    </main>
+
+    <!-- Detalles -->
+    <section class="detalles">
+        <h2>Acerca de la montura</h2>
+
+        <details open>
+            <summary>Detalles de la montura</summary>
+
+            <div class="datos">
+                <span>Material:</span>
+                <p>Metal</p>
+            </div>
+
+            <div>
+                <span>Forma:</span>
+                <p>Redonda</p>
+            </div>
+
+            <div>
+                <span>Color:</span>
+                <p>Negro</p>
+            </div>
+
+            <div>
+                <span>Género:</span>
+                <p>Unisex</p>
+            </div>
+        </details>
+
+        <details open>
+            <summary>Detalles de las lunas</summary>
+
+            <div class="datos">
+                <span>Color:</span>
+                <p>Negro</p>
+            </div>
+
+            <div>
+                <span>Graduables:</span>
+                <p>Sí</p>
+            </div>
+
+            <div>
+                <span>Polarizados:</span>
+                <p>Sí</p>
+            </div>
+        </details>
+
+        <details open>
+            <summary>Medidas de la montura</summary>
+
+            <div class="datos">
+                <span>Tamaño de las lunas:</span>
+                <p>53 mm</p>
+            </div>
+
+            <div>
+                <span>Ancho del puente:</span>
+                <p>20 mm</p>
+            </div>
+
+            <div>
+                <span>Largo de la varilla:</span>
+                <p>145 mm</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Acerca de Ray-Ban</summary>
+
+            <p class="descripcion">
+                Los lentes Ray-Ban son esenciales para quienes buscan
+                estilo y calidad en un solo accesorio. Como referente
+                en la historia de la moda, Ray-Ban ofrece diseños
+                icónicos que nunca pasan de moda. En OptiStyle puedes
+                comprar gafas de sol y lentes oftálmicos Ray-Ban con
+                entrega rápida en pocos días. Descubre modelos como
+                Aviator, Wayfarer y Clubmaster, con opciones de lentes
+                polarizados, espejados o degradados, y monturas que se
+                adaptan a diferentes estilos.
+            </p>
+        </details>
+    </section>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
